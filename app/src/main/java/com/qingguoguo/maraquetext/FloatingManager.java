@@ -1,6 +1,7 @@
 package com.qingguoguo.maraquetext;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -17,7 +18,11 @@ public class FloatingManager {
 
     public static FloatingManager getInstance(Context context) {
         if (mInstance == null) {
-            mInstance = new FloatingManager(context);
+            synchronized (FloatingManager.class) {
+                if (mInstance == null) {
+                    mInstance = new FloatingManager(context);
+                }
+            }
         }
         return mInstance;
     }
@@ -29,6 +34,7 @@ public class FloatingManager {
 
     /**
      * 添加悬浮窗
+     *
      * @param view
      * @param params
      * @return
@@ -45,6 +51,7 @@ public class FloatingManager {
 
     /**
      * 移除悬浮窗
+     *
      * @param view
      * @return
      */
@@ -60,6 +67,7 @@ public class FloatingManager {
 
     /**
      * 更新悬浮窗参数
+     *
      * @param view
      * @param params
      * @return
@@ -72,5 +80,27 @@ public class FloatingManager {
             e.printStackTrace();
         }
         return false;
+    }
+
+    /**
+     * 获取屏幕宽度
+     *
+     * @return int
+     */
+    public int getScreenWidth( ) {
+        DisplayMetrics dm = new DisplayMetrics();
+        mWindowManager.getDefaultDisplay().getMetrics(dm);
+        return dm.widthPixels;
+    }
+
+    /**
+     * 获取屏幕高度
+     *
+     * @return int
+     */
+    public  int getScreenHeight( ) {
+        DisplayMetrics dm = new DisplayMetrics();
+        mWindowManager.getDefaultDisplay().getMetrics(dm);
+        return dm.heightPixels;
     }
 }

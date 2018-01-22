@@ -19,15 +19,6 @@ public class MarqueTextView extends TextView {
 
     public MarqueTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initView();
-    }
-
-    public MarqueTextView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        initView();
-    }
-
-    private void initView() {
         setFocusable(true);
         setFocusableInTouchMode(true);
         setSingleLine();
@@ -35,6 +26,18 @@ public class MarqueTextView extends TextView {
         setMarqueeRepeatLimit(-1);
     }
 
+    public MarqueTextView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        setFocusable(true);
+        setFocusableInTouchMode(true);
+        setSingleLine();
+        setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        setMarqueeRepeatLimit(-1);
+    }
+
+    /**
+     * 用于EditText抢注焦点的问题
+     */
     @Override
     protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
         if (focused) {
@@ -42,6 +45,9 @@ public class MarqueTextView extends TextView {
         }
     }
 
+    /**
+     * Window与Window间焦点发生改变时的回调
+     */
     @Override
     public void onWindowFocusChanged(boolean focused) {
         if (focused) {
@@ -52,12 +58,5 @@ public class MarqueTextView extends TextView {
     @Override
     public boolean isFocused() {
         return true;
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2
-                , MeasureSpec.AT_MOST);
-        super.onMeasure(widthMeasureSpec, expandSpec);
     }
 }

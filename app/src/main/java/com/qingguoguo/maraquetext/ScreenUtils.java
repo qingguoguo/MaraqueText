@@ -9,14 +9,18 @@ import android.util.DisplayMetrics;
  * @describe :
  */
 
-public class Utils {
+public class ScreenUtils {
 
+    /**
+     * 获取屏幕宽度
+     *
+     * @return int
+     */
     public static int getScreenWidth(Activity activity) {
         DisplayMetrics dm = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay()
                 .getMetrics(dm);
         return dm.widthPixels;
-
     }
 
     /**
@@ -29,6 +33,5 @@ public class Utils {
         activity.getWindowManager().getDefaultDisplay()
                 .getMetrics(dm);
         return dm.heightPixels;
-
     }
 }
