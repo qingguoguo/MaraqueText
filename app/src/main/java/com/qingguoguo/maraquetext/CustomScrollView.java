@@ -26,6 +26,9 @@ public class CustomScrollView extends ScrollView {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         for (int i = 0; i < getChildCount(); i++) {
             View childAt = getChildAt(i);
+            Log.i("CustomScrollView", "Mode:AT_MOST=" + MeasureSpec.AT_MOST + ",EXACTLY=" +
+                    MeasureSpec.EXACTLY + ",UNSPECIFIED=" + MeasureSpec.UNSPECIFIED);
+
             Log.i("CustomScrollView", "view:" + childAt + ",Mode:" + MeasureSpec.getMode(childAt.getMeasuredHeight()));
         }
     }
