@@ -18,8 +18,7 @@ public class ScreenUtils {
      */
     public static int getScreenWidth(Activity activity) {
         DisplayMetrics dm = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay()
-                .getMetrics(dm);
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
         return dm.widthPixels;
     }
 
@@ -30,8 +29,7 @@ public class ScreenUtils {
      */
     public static int getScreenHeight(Activity activity) {
         DisplayMetrics dm = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay()
-                .getMetrics(dm);
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
         return dm.heightPixels;
     }
 }
