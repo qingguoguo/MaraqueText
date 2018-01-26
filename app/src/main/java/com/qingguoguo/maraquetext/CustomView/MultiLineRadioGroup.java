@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext;
+package com.qingguoguo.maraquetext.CustomView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+
+import com.qingguoguo.maraquetext.R;
 
 import java.util.ArrayList;
 import java.util.List;

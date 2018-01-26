@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext;
+package com.qingguoguo.maraquetext.CustomView;
 
 import android.content.Context;
 import android.graphics.Rect;

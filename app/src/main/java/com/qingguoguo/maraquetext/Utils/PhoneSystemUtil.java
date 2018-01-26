@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext;
+package com.qingguoguo.maraquetext.Utils;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -13,7 +13,7 @@ import java.util.Locale;
  * @describe :
  */
 
-public class SystemUtil {
+public class PhoneSystemUtil {
 
     /**
      * 获取当前手机系统语言。
@@ -97,8 +97,8 @@ public class SystemUtil {
 
     public static void log() {
         //Xiaomi,7.0,zh,MIX
-        Log.i("DeviceTAG", SystemUtil.getDeviceBrand() + "," +
-                SystemUtil.getSystemVersion() + "," +
-                SystemUtil.getSystemModel());
+        Log.i("DeviceTAG", PhoneSystemUtil.getDeviceBrand() + "," +
+                PhoneSystemUtil.getSystemVersion() + "," +
+                PhoneSystemUtil.getSystemModel());
     }
 }

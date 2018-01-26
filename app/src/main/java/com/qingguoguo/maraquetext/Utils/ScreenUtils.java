@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext;
+package com.qingguoguo.maraquetext.Utils;
 
 import android.app.Activity;
 import android.util.DisplayMetrics;

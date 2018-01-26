@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext;
+package com.qingguoguo.maraquetext.CustomView;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.qingguoguo.maraquetext.R;
+
 import java.util.List;
 
 /**

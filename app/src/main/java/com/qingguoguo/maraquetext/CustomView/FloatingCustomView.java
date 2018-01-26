@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext;
+package com.qingguoguo.maraquetext.CustomView;
 
 import android.app.DialogFragment;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.qingguoguo.maraquetext.R;
 
 /**
  * @author :qingguoguo
