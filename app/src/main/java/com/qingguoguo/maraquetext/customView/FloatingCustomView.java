@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext.CustomView;
+package com.qingguoguo.maraquetext.customView;
 
 import android.app.DialogFragment;
 import android.content.Context;

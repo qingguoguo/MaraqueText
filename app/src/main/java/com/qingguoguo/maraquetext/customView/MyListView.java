@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext.CustomView;
+package com.qingguoguo.maraquetext.customView;
 
 import android.content.Context;
 import android.util.AttributeSet;

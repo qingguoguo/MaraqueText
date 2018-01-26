@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext.CustomView;
+package com.qingguoguo.maraquetext.customView;
 
 import android.content.Context;
 import android.util.Log;
@@ -18,7 +18,7 @@ import java.util.List;
  * @describe :
  */
 
-class MyAdapter extends BaseAdapter {
+public class MyAdapter extends BaseAdapter {
     public static final String TAG = MyAdapter.class.getSimpleName();
     private List<String> data;
     private Context mContext;

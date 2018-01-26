@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext.CustomView;
+package com.qingguoguo.maraquetext.customView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -16,12 +16,16 @@ import com.qingguoguo.maraquetext.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author :qingguoguo
+ * @datetime ：2018/1/26 11:25
+ * @Describe :
+ */
 public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
     public final int LEFT = 1;
     public final int CENTER = 0;
     public final int RIGHT = 2;
     private int mX, mY;
-    private List<CheckBox> viewList;
     private int childMarginHorizontal = 0;
     private int childMarginVertical = 0;
     private int childResId = 0;
@@ -33,14 +37,18 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
     private int gravity = LEFT;
     private OnCheckedChangedListener listener;
     private List<String> childValues;
+    private List<CheckBox> viewList;
     private boolean forceLayout;
 
-    public void setChildValues(List<String> childValues) {
-        this.childValues = childValues;
+    public MultiLineRadioGroup(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public MultiLineRadioGroup(Context context, AttributeSet attrs,
-                               int defStyleAttr) {
+    public MultiLineRadioGroup(Context context) {
+        this(context, null, 0);
+    }
+
+    public MultiLineRadioGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         viewList = new ArrayList<>();
         childValues = new ArrayList<>();
@@ -59,12 +67,10 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
                 R.styleable.MultiLineRadioGroup_child_values, 0);
         gravity = arr.getInt(R.styleable.MultiLineRadioGroup_gravity, LEFT);
         if (childResId == 0) {
-            throw new RuntimeException(
-                    "The attr 'child_layout' must be specified!");
+            throw new RuntimeException("The attr 'child_layout' must be specified!");
         }
         if (childValuesId != 0) {
-            String[] childValues_ = getResources()
-                    .getStringArray(childValuesId);
+            String[] childValues_ = getResources().getStringArray(childValuesId);
             for (String str : childValues_) {
                 childValues.add(str);
             }
@@ -87,14 +93,6 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
             Log.d("tag", "childCount is 0");
         }
         arr.recycle();
-    }
-
-    public MultiLineRadioGroup(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public MultiLineRadioGroup(Context context) {
-        this(context, null, 0);
     }
 
     @Override
@@ -180,7 +178,8 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
     @Override
     public void onClick(View v) {
         try {
-            if (singleChoice) { // singleChoice
+            // singleChoice
+            if (singleChoice) {
                 int i = (Integer) v.getTag();
                 boolean checked = ((CheckBox) v).isChecked();
                 if (mLastCheckedPosition != -1 && mLastCheckedPosition != i) {
@@ -231,6 +230,10 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
         this.gravity = gravity;
         forceLayout = true;
         requestLayout();
+    }
+
+    public void setChildValues(List<String> childValues) {
+        this.childValues = childValues;
     }
 
     public boolean isSingleChoice() {
@@ -311,7 +314,9 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
             childValues.remove(cb.getText().toString());
             childCount--;
             forceLayout = true;
-            if (position <= mLastCheckedPosition) { // before LastCheck
+
+            // before LastCheck
+            if (position <= mLastCheckedPosition) {
                 if (mLastCheckedPosition == position) {
                     mLastCheckedPosition = -1;
                 } else {
@@ -340,7 +345,9 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
         childValues.add(position, str);
         childCount++;
         forceLayout = true;
-        if (position <= mLastCheckedPosition) { // before LastCheck
+
+        // before LastCheck
+        if (position <= mLastCheckedPosition) {
             mLastCheckedPosition++;
         }
         for (int i = position; i < viewList.size(); i++) {
@@ -351,11 +358,9 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
     }
 
     private CheckBox getChild() {
-        View v = LayoutInflater.from(getContext()).inflate(childResId, this,
-                false);
+        View v = LayoutInflater.from(getContext()).inflate(childResId, this, false);
         if (!(v instanceof CheckBox)) {
-            throw new RuntimeException(
-                    "The attr child_layout's root must be a CheckBox!");
+            throw new RuntimeException("The attr child_layout's root must be a CheckBox!");
         }
         CheckBox cb = (CheckBox) v;
         return cb;
@@ -387,7 +392,15 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
         }
     }
 
+    /**
+     *
+     */
     public interface OnCheckedChangedListener {
+        /**
+         * @param group
+         * @param position
+         * @param checked
+         */
         void onItemChecked(MultiLineRadioGroup group, int position, boolean checked);
     }
 }
