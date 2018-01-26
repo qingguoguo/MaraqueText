@@ -1,24 +1,23 @@
-package com.qingguoguo.maraquetext.customView;
+package com.qingguoguo.maraquetext.customview;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 /**
  * @author :qingguoguo
- * @datetime ：2018/1/26
+ * @datetime ：2018/1/19
  * @describe :
  */
 
-public class CustomLinearLayout extends LinearLayout {
-    public CustomLinearLayout(Context context) {
+public class CustomScrollView extends ScrollView {
+    public CustomScrollView(Context context) {
         super(context);
     }
 
-    public CustomLinearLayout(Context context, @Nullable AttributeSet attrs) {
+    public CustomScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -27,10 +26,10 @@ public class CustomLinearLayout extends LinearLayout {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         for (int i = 0; i < getChildCount(); i++) {
             View childAt = getChildAt(i);
-            Log.i("CustomLinearLayout", "Mode:AT_MOST=" + MeasureSpec.AT_MOST + ",EXACTLY=" +
+            Log.i("CustomScrollView", "Mode:AT_MOST=" + MeasureSpec.AT_MOST + ",EXACTLY=" +
                     MeasureSpec.EXACTLY + ",UNSPECIFIED=" + MeasureSpec.UNSPECIFIED);
 
-            Log.i("CustomLinearLayout", "view:" + childAt + ",Mode:" + MeasureSpec.getMode(childAt.getMeasuredHeight()));
+            Log.i("CustomScrollView", "view:" + childAt + ",Mode:" + MeasureSpec.getMode(childAt.getMeasuredHeight()));
         }
     }
 }

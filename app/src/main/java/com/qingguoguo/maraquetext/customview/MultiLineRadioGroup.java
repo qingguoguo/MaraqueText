@@ -1,4 +1,4 @@
-package com.qingguoguo.maraquetext.customView;
+package com.qingguoguo.maraquetext.customview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
