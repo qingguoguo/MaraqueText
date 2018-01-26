@@ -2,4 +2,12 @@
     <string name="app_name">MaraqueText</string>
     <string name="string_hint_goto_room">提示：您已预约问诊预约问时间段%1$s，请尽快进入诊室!</string>
     <string name="book">书名：《%1$s》,作者：%2$s,编号(整数)：%3$d,价格(浮点)：%4$.2f元</string>
+    <string-array name="childvalues">
+        <item>配偶</item>
+        <item>父亲</item>
+        <item>母亲</item>
+        <item>儿子</item>
+        <item>女儿</item>
+        <item>其他</item>
+    </string-array>
 </resources>

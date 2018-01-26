@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.qingguoguo.maraquetext.MainActivity">
 
     <com.qingguoguo.maraquetext.customview.MarqueTextView
         android:id="@+id/marqueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:gravity="left|bottom"
-        android:focusable="true"
         android:layout_centerInParent="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
         android:focusableInTouchMode="true"
+        android:gravity="left|bottom"
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
@@ -29,4 +31,16 @@
         android:onClick="btnClick"
         android:text="Button" />
 
-</RelativeLayout>
+    <com.qingguoguo.maraquetext.customview.MultiLineRadioGroup
+        android:id="@+id/multiLineRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:child_count="6"
+        app:child_layout="@layout/item_relation_child"
+        app:child_margin_horizontal="10dp"
+        app:child_margin_vertical="16dp"
+        app:child_values="@array/childvalues"
+        app:gravity="0"
+        app:single_choice="true" />
+
+</LinearLayout>

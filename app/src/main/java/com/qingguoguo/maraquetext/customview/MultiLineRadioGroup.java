@@ -104,8 +104,7 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
             for (int i = 0; i < childCount; i++) {
                 View v = getChildAt(i);
                 measureChild(v, widthMeasureSpec, heightMeasureSpec);
-                int w = v.getMeasuredWidth() + childMarginHorizontal * 2
-                        + flagX + getPaddingLeft() + getPaddingRight();
+                int w = v.getMeasuredWidth() + childMarginHorizontal * 2 + flagX + getPaddingLeft() + getPaddingRight();
                 if (w > getMeasuredWidth()) {
                     flagY++;
                     flagX = 0;
@@ -115,8 +114,7 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
             }
             rowNumber = flagY;
         }
-        int height = (flagY + 1) * (sheight + childMarginVertical)
-                + childMarginVertical + getPaddingBottom() + getPaddingTop();
+        int height = (flagY + 1) * (sheight + childMarginVertical) + childMarginVertical + getPaddingBottom() + getPaddingTop();
         setMeasuredDimension(getMeasuredWidth(), height);
     }
 

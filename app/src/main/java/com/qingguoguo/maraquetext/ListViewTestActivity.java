@@ -3,9 +3,7 @@ package com.qingguoguo.maraquetext;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
-
 import com.qingguoguo.maraquetext.customview.MyAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
