@@ -130,8 +130,7 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
             if (gravity != LEFT) {
                 for (int i = 0; i < childCount; i++) {
                     View v = getChildAt(i);
-                    int w = v.getMeasuredWidth() + childMarginHorizontal * 2
-                            + mX + getPaddingLeft() + getPaddingRight();
+                    int w = v.getMeasuredWidth() + childMarginHorizontal * 2 + mX + getPaddingLeft() + getPaddingRight();
                     if (w > getWidth()) {
                         if (gravity == CENTER) {
                             sX[mY] = (getWidth() - mX) / 2;
@@ -154,18 +153,14 @@ public class MultiLineRadioGroup extends ViewGroup implements OnClickListener {
             }
             for (int i = 0; i < childCount; i++) {
                 View v = getChildAt(i);
-                int w = v.getMeasuredWidth() + childMarginHorizontal * 2 + mX
-                        + getPaddingLeft() + getPaddingRight();
+                int w = v.getMeasuredWidth() + childMarginHorizontal * 2 + mX + getPaddingLeft() + getPaddingRight();
                 if (w > getWidth()) {
                     mY++;
                     mX = 0;
                 }
-                int startX = mX + childMarginHorizontal + getPaddingLeft()
-                        + sX[mY];
-                int startY = mY * v.getMeasuredHeight() + (mY + 1)
-                        * childMarginVertical;
-                v.layout(startX, startY, startX + v.getMeasuredWidth(), startY
-                        + v.getMeasuredHeight());
+                int startX = mX + childMarginHorizontal + getPaddingLeft() + sX[mY];
+                int startY = mY * v.getMeasuredHeight() + (mY + 1) * childMarginVertical;
+                v.layout(startX, startY, startX + v.getMeasuredWidth(), startY + v.getMeasuredHeight());
                 mX += v.getMeasuredWidth() + childMarginHorizontal * 2;
             }
         }
