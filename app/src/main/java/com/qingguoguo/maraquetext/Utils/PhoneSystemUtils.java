@@ -13,7 +13,7 @@ import java.util.Locale;
  * @describe :
  */
 
-public class PhoneSystemUtil {
+public class PhoneSystemUtils {
 
     /**
      * 获取当前手机系统语言。
@@ -97,8 +97,8 @@ public class PhoneSystemUtil {
 
     public static void log() {
         //Xiaomi,7.0,zh,MIX
-        Log.i("DeviceTAG", PhoneSystemUtil.getDeviceBrand() + "," +
-                PhoneSystemUtil.getSystemVersion() + "," +
-                PhoneSystemUtil.getSystemModel());
+        Log.i("DeviceTAG", PhoneSystemUtils.getDeviceBrand() + "," +
+                PhoneSystemUtils.getSystemVersion() + "," +
+                PhoneSystemUtils.getSystemModel());
     }
 }
